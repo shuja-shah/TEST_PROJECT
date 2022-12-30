@@ -2,3 +2,21 @@ body {
   margin:0;
   padding:0;
 }
+
+.typography {
+  color: #fff;
+  font-family: "Lato";
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.typography2 {
+  color: #fff;
+  font-family: "Lato";
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-weight: 400;
+}
