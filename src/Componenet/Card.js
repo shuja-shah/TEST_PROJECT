@@ -3,6 +3,8 @@ import "./card.css";
 import image1 from "../Assets/Image1.jpg";
 import { useState, useEffect } from "react";
 import Typography from "@mui/material/Typography";
+import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
+import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 
 const CountDown = () => {
   const [days, setDays] = useState(78);
@@ -49,10 +51,16 @@ const CountDown = () => {
           justifyContent: "center",
           alignItems: "center",
           gap: "0.5rem",
+          color: "#fff",
+          fontFamily: "Lato",
+          letterSpacing: 3,
         }}
       >
-        <Typography variant="h4" sx={{ color: "#fff", fontFamily: "Lato" }}>
-          {days < 10 ? "0" + days : days}:{" "}
+        <Typography
+          variant="h4"
+          sx={{ color: "#fff", fontFamily: "Lato", letterSpacing: 3 }}
+        >
+          {days < 10 ? "0" + days : days}
         </Typography>
         DAYS
       </Box>
@@ -63,9 +71,15 @@ const CountDown = () => {
           justifyContent: "center",
           alignItems: "center",
           gap: "0.5rem",
+          color: "#fff",
+          fontFamily: "Lato",
+          letterSpacing: 3,
         }}
       >
-        <Typography variant="h4" sx={{ color: "#fff", fontFamily: "Lato" }}>
+        <Typography
+          variant="h4"
+          sx={{ color: "#fff", fontFamily: "Lato", letterSpacing: 3 }}
+        >
           {hours < 10 ? "0" + hours : hours} :
         </Typography>
         HOURS
@@ -77,9 +91,15 @@ const CountDown = () => {
           justifyContent: "center",
           alignItems: "center",
           gap: "0.5rem",
+          color: "#fff",
+          fontFamily: "Lato",
+          letterSpacing: 3,
         }}
       >
-        <Typography variant="h4" sx={{ color: "#fff", fontFamily: "Lato" }}>
+        <Typography
+          variant="h4"
+          sx={{ color: "#fff", fontFamily: "Lato", letterSpacing: 3 }}
+        >
           {minutes < 10 ? "0" + minutes : minutes} :
         </Typography>
         MINUTES
@@ -91,9 +111,15 @@ const CountDown = () => {
           justifyContent: "center",
           alignItems: "center",
           gap: "0.5rem",
+          color: "#fff",
+          fontFamily: "Lato",
+          letterSpacing: 3,
         }}
       >
-        <Typography variant="h4" sx={{ color: "#fff", fontFamily: "Lato" }}>
+        <Typography
+          variant="h4"
+          sx={{ color: "#fff", fontFamily: "Lato", letterSpacing: 3 }}
+        >
           {seconds}
         </Typography>
         SECONDS
@@ -102,41 +128,36 @@ const CountDown = () => {
   );
 };
 
-const Card = () => (
-  <Grid
-    container
-    justifyContent="center"
-    alignItems="center"
-    direction="column"
-    sx={{ height: "100%", width: "100%" }}
-  >
+const Card = () => {
+  const [num, setNum] = useState(1);
+  return (
     <Grid
-      item
-      xs={12}
-      sx={{
-        borderTopLeftRadius: 4,
-        borderTopRightRadius: 4,
-        height: "100%",
-        width: "100%",
-        boxShadow: "0 0 10px #000",
-        maxWidth: 800,
-        background: "linear-gradient(90deg, #000000 0%, #434343 100%)",
-      }}
+      container
+      justifyContent="center"
+      alignItems="center"
+      direction="column"
+      sx={{ height: "100%", width: "100%" }}
     >
-      {/* <img
-        alt="cardImg"
-        src={image1}
-        style={{
-          height: "auto",
+      <Grid
+        item
+        xs={12}
+        sx={{
+          borderTopLeftRadius: 4,
+          borderTopRightRadius: 4,
+          height: "100%",
           width: "100%",
-          objectFit: "contain",
-          objectPosition: "center",
-          borderRadius: 4,
           boxShadow: "0 0 10px #000",
+          maxWidth: 800,
+          background: "linear-gradient(90deg, #000000 0%, #434343 100%)",
         }}
-      /> */}
-      <CountDown />
+      >
+        <CountDown />
+      </Grid>
+      <Grid item container justifyContent="space-between" alignItems="center">
+        <ChevronLeftIcon sx={{ color: "#fff", fontSize: 50 }} />
+        <ChevronRightIcon sx={{ color: "#fff", fontSize: 50 }} />
+      </Grid>
     </Grid>
-  </Grid>
-);
+  );
+};
 export default Card;
